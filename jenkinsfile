@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('ckeckout'){
             steps {
-                git 'https://github.com/Lauryn-cloud-star/classdemo2.git' // specify your git repository URL here
+                git branch: 'main', url:'https://github.com/Lauryn-cloud-star/classdemo2.git' // specify your git repository URL here
             }
         }
         stage('Setup Virtual Environment') {
