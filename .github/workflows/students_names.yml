@@ -1,0 +1,55 @@
+    name: |
+      Refactory students names
+      June intake 2025
+    on: [push]
+    
+    jobs:
+      example-job:
+        runs-on: ubuntu-latest
+        steps:
+          - name: JAVASCRIPT group names
+            run: |
+                echo "Lillian"
+                echo "Emmanuel Masolo"
+                echo "Lauryn Hope"
+                echo "Hellen"
+                echo "Nambooze"
+                echo "Maurice Jakisa"
+                echo "Brenda"
+          - name: TYPESCRIPT group names
+            run: |
+                echo "Patience"
+                echo "Ejidia"
+                echo "Conrad"
+                echo "Josephine"
+                echo "Linda Peruth"
+          - name: JAVA group name
+            run: |
+                echo "Natasha"
+                echo "Edna"
+                echo "Agoa"
+                echo "Emmanuel Okite"
+                echo "Kaasa"
+            
+          - name: PYTHON group names
+            run: |
+                echo "Birungi Faimah"
+                echo "Uwase Evelyn"
+                echo "Winnie Daisy"
+                echo "Munir Muguzi"
+                echo "Benge Benjamin"
+                echo "Victoria Kabahita"
+          - name: RUBY group names
+            run: |
+                echo "Komuntale Elizabeth"
+                echo "Veronica Kabwaga"
+                echo "Kemigisha Esther"
+                echo "Angwen Sarah"
+                echo "Mutesi Joan"
+          - name: PHP  group names
+            run: |
+                echo "Charity Ojera"
+                echo "Darvin"
+                echo "Samia"
+                echo "Phionah"
+                echo "Martha Nakintu"
