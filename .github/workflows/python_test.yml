@@ -1,34 +1,34 @@
-name: python test
-
+---
+name: python-test
 on: [push, pull_request]
+jobs: 
+  test:
+    runs-on: ubuntu-latest
+    env:
+      VENV: venv
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-jobs:
-    test:
-        runs-on: ubuntu-latest
-        env:
-            VENV: venv
-        steps:
-            - name: Checkout code
-              uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
 
-            - name: Set up Python
-              uses: actions/setup-python@v5
-              with:
-                python-version: '3.10'
-            
-            - name: Set up virtual environment
-              run: |
-                python -m venv $VENV
-                source $VENV/bin/activate
-                pip install -r requirements.txt
+      - name: Set up virtual environment
+        run: |
+          python -m venv $VENV
+          source $VENV/bin/activate
+          pip install -r requirements.txt
 
-            - name: Run tests
-              run: |
-                source $VENV/bin/activate
-                pytest
+      - name: Run tests
+        run: |
+          source $VENV/bin/activate
+          pytest
 
-
-
-            
-               
-
+      - name: lint with pylint if pytest is successful
+        if: success()
+        run: |
+          source $VENV/bin/activate
+          pip install pylint
+          pylint **/*.py
